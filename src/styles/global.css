@@ -1,36 +1,23 @@
-/**
- * Estilos globais - NÃO USADO PELO HUB.
- * O hub usa src/styles/hub.css (fixo, não alterar).
- * Este arquivo é usado apenas por páginas demo em f8/src/pages/.
- * Sites criados ficam em sites/[nome]/ e têm seu próprio global.css.
- */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Porto Marketing theme colors */
   --color-bg: #0f0f0f;
   --color-bg-elevated: #1a1a1a;
   --color-text: #ffffff;
   --color-text-muted: rgba(255, 255, 255, 0.85);
   --color-accent: #6b39f4;
-  --color-accent-secondary: #9e17f1;
   --color-accent-hover: #5a2dd9;
   --color-border: rgba(255, 255, 255, 0.1);
   --color-body: #6c757d;
   --color-body-2: #adb5bd;
-  --color-bg-light: #f8f9fa;
-  --color-tertiary: #c5d4fb;
-  --color-quaternary: #d6efe8;
   --font-display: 'Lexend', 'Poppins', system-ui, sans-serif;
   --font-body: 'Poppins', system-ui, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -40,6 +27,4 @@ body {
   line-height: 1.6;
 }
 
-.font-display {
-  font-family: var(--font-display);
-}
+.font-display { font-family: var(--font-display); }
