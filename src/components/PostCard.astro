@@ -1,23 +1,10 @@
 ---
-/**
- * PostCard.astro
- * Card de preview de post para listagem do blog
- * Aceita o objeto post da Content Collection
- */
 import type { CollectionEntry } from 'astro:content';
-
-interface Props {
-  post: CollectionEntry<'posts'>;
-}
-
+interface Props { post: CollectionEntry<'posts'>; }
 const { post } = Astro.props;
 const { title, description, pubDate, image } = post.data;
 const slug = post.slug;
-const formattedDate = pubDate?.toLocaleDateString('pt-BR', {
-  day: '2-digit',
-  month: 'long',
-  year: 'numeric',
-});
+const formattedDate = pubDate?.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 ---
 
 <article class="border-b border-dark-700 pb-8">
