@@ -1,8 +1,6 @@
 /**
  * Verificação de links internos - script standalone para sites
  * Roda após astro build. Falha o build (exit 1) se houver links quebrados.
- * Usado em: build = "astro build && node scripts/check-links-standalone.cjs"
- * Funciona em qualquer ambiente (local, Vercel, CI) - sem dependências externas.
  */
 const fs = require('fs');
 const path = require('path');
@@ -56,7 +54,6 @@ for (const file of htmlFiles) {
   const pagePath = '/' + (rel === '/' ? '' : rel).replace(/\/$/, '');
   const html = fs.readFileSync(file, 'utf-8');
   const links = getInternalLinks(html, pagePath);
-
   for (const link of links) {
     if (checked.has(link)) continue;
     checked.add(link);
@@ -68,7 +65,6 @@ for (const file of htmlFiles) {
 if (broken.length > 0) {
   console.error('\x1b[31m✖ Links quebrados (deploy bloqueado):\x1b[0m');
   broken.forEach((b) => console.error(`  ${b.url} (de ${b.from})`));
-  console.error('\x1b[31m✖ Corrija os links acima antes de fazer deploy.\x1b[0m');
   process.exit(1);
 }
 
