@@ -1,41 +1,6 @@
-# Dependencies
-node_modules/
-
-# Build output
-dist/
-.astro/
-
-# Environment
+node_modules
+dist
+.astro
 .env
 .env.*
-!.env.example
-
-# Credenciais (nunca commitar)
-data/credentials.json
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OS
 .DS_Store
-Thumbs.db
-
-# Logs
-*.log
-npm-debug.log*
-
-# .git de cada site (cada site pode ter seu repo para deploy separado)
-sites/*/.git/
-
-# Export tema CNX (temp + zip gerados)
-.export-theme-temp/
-tema-*.zip
-
-# Referências capturadas (screenshots, HTML, CSS)
-public/reference/
-**/public/reference/
-sites/*/public/reference/
-
