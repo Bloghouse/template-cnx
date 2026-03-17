@@ -1,12 +1,10 @@
 ---
-/**
- * index.astro — será sobrescrito pelo robô CNX com o código gerado pela IA.
- */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { HeroSection } from '../components/sections/HeroSection';
+import { ServicesSection } from '../components/sections/ServicesSection';
 ---
 
-<BaseLayout title="Em construção">
-  <div class="min-h-screen flex items-center justify-center">
-    <p class="text-white/50">Site sendo construído...</p>
-  </div>
+<BaseLayout title="Bem-vindo ao nosso site">
+  <HeroSection client:load />
+  <ServicesSection client:visible />
 </BaseLayout>
