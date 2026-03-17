@@ -1,0 +1,18 @@
+---
+import { siteConfig } from '../../config/siteConfig';
+const hero = siteConfig.pages?.home?.hero;
+---
+
+{hero && (
+  <section class="bg-site-primary text-white py-24 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-bold mb-6 font-heading">{hero.title}</h1>
+      <p class="text-xl mb-8 font-body opacity-90">{hero.subtitle}</p>
+      {hero.ctaText && (
+        <a href={hero.ctaLink} class="bg-site-secondary text-white px-8 py-4 rounded-xl font-bold inline-block hover:scale-105 transition-transform">
+          {hero.ctaText}
+        </a>
+      )}
+    </div>
+  </section>
+)}

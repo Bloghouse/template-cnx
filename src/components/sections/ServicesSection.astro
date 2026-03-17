@@ -1,0 +1,20 @@
+---
+import { siteConfig } from '../../config/siteConfig';
+const services = siteConfig.services || [];
+---
+
+{services.length > 0 && (
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-16 font-heading">Nossos Serviços / Categorias</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((s) => (
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-2 transition-transform">
+            <h3 class="text-xl font-bold mb-4">{s.name}</h3>
+            <p class="text-gray-600">{s.shortDescription || s.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

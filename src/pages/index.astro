@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { HeroSection } from '../components/sections/HeroSection';
-import { ServicesSection } from '../components/sections/ServicesSection';
+import HeroSection from '../components/sections/HeroSection.astro';
+import ServicesSection from '../components/sections/ServicesSection.astro';
+import { siteConfig } from '../config/siteConfig';
 ---
 
-<BaseLayout title="Bem-vindo ao nosso site">
-  <HeroSection client:load />
-  <ServicesSection client:visible />
+<BaseLayout title={siteConfig.seo?.defaultTitle || "Bem-vindo ao nosso site"}>
+  <HeroSection />
+  <ServicesSection />
 </BaseLayout>
