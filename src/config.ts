@@ -1,31 +1,25 @@
 /**
- * Configuração central do site PBN 8links - Template Porto Marketing
- * Nav agrupada para UX: máximo 5-7 itens no header, resto no dropdown "Mais"
+ * Configuração central do site — gerado automaticamente pelo CNX.
+ * Será sobrescrito durante o build com o nome e nicho do projeto.
  */
 export const siteConfig = {
   name: 'Meu Site',
   siteName: 'Meu Site',
-  description: 'Marketing digital e estratégias inovadoras. Impulsionamos marcas além das expectativas.',
-  siteDescription: 'Marketing digital e estratégias inovadoras. Impulsionamos marcas além das expectativas.',
+  description: 'Marketing digital e estratégias inovadoras.',
+  siteDescription: 'Marketing digital e estratégias inovadoras.',
   url: 'https://meu-site.vercel.app',
   author: 'Meu Site',
-  primaryNiche: 'Marketing Digital',
+  primaryNiche: 'Geral',
   aboutDescription: 'Estratégias inovadoras para crescimento sustentável.',
   contactEmail: 'contato@meusite.com',
-  /** Menu principal - prioriza Início, Sobre, Serviços, Cases, Contato (≤7 itens) */
   nav: [
     { label: 'Início', href: '/' },
     { label: 'Sobre', href: '/sobre' },
     { label: 'Serviços', href: '/servicos' },
-    { label: 'Processo', href: '/processo' },
-    { label: 'Cases', href: '/cases' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contato', href: '/contato' },
   ],
-  /** Itens secundários - rodapé ou dropdown "Mais" */
-  navSecondary: [
-    { label: 'Equipe', href: '/equipe' },
-    { label: 'Portfolio', href: '/portfolio' },
-  ],
+  navSecondary: [] as { label: string; href: string }[],
 } as const;
 
 export default siteConfig;
