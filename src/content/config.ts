@@ -1,7 +1,3 @@
-/**
- * Content Collections - Schema dos posts
- * Compatível com o formato que a bridge 8links envia via Git
- */
 import { defineCollection, z } from 'astro:content';
 
 const posts = defineCollection({
@@ -17,6 +13,4 @@ const posts = defineCollection({
   }),
 });
 
-export const collections = {
-  posts,
-};
+export const collections = { posts };
