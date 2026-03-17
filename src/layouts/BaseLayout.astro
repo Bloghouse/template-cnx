@@ -1,8 +1,4 @@
 ---
-/**
- * BaseLayout.astro
- * Layout principal do site - estrutura HTML, meta tags (incl. OG/Twitter), sitemap, JSON-LD
- */
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -21,17 +17,8 @@ const ogImage = `${baseUrl}/og-image.png`;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'Organization',
-      name: siteConfig.name,
-      url: baseUrl,
-    },
-    {
-      '@type': 'WebSite',
-      name: siteConfig.name,
-      description: siteConfig.description,
-      url: baseUrl,
-    },
+    { '@type': 'Organization', name: siteConfig.name, url: baseUrl },
+    { '@type': 'WebSite', name: siteConfig.name, description: siteConfig.description, url: baseUrl },
   ],
 };
 ---
@@ -46,21 +33,15 @@ const jsonLd = {
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
-
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="pt_BR" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-
-    <!-- JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
